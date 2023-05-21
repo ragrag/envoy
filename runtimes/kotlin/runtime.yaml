@@ -1,0 +1,5 @@
+id: kotlin
+file: main.kt
+meta:
+  language: kotlin
+  version: 1.8.21

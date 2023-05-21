@@ -1,0 +1,5 @@
+id: typescript
+file: main.ts
+meta:
+  language: TypeScript
+  version: 5.0.4

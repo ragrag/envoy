@@ -1,0 +1,5 @@
+id: haskell
+file: main.hs
+meta:
+  language: Haskell
+  version: 9.6.1

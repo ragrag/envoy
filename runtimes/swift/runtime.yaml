@@ -1,0 +1,5 @@
+id: swift
+file: main.swift
+meta:
+  language: Swift
+  version: 5.8

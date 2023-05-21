@@ -1,0 +1,5 @@
+id: ruby
+file: main.rb
+meta:
+  language: Ruby
+  version: 3.2.2

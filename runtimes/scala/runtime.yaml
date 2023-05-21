@@ -1,0 +1,5 @@
+id: scala
+file: Main.scala
+meta:
+  language: Scala
+  version: 3.2.2

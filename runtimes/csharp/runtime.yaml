@@ -1,0 +1,5 @@
+id: csharp
+file: main.cs
+meta:
+  language: CSharp
+  version: 6.8 (Mono)

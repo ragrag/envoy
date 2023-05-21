@@ -1,0 +1,5 @@
+id: elixir
+file: main.exs
+meta:
+  language: Elixir
+  version: 1.14.4

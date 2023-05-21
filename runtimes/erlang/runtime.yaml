@@ -1,0 +1,5 @@
+id: erlang
+file: main.erl
+meta:
+  language: Erlang
+  version: 25.3.1

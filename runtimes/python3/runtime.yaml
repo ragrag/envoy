@@ -1,0 +1,5 @@
+id: python3
+file: main.py
+meta:
+  language: Python
+  version: 3.11.3

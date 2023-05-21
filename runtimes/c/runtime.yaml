@@ -1,0 +1,5 @@
+id: c
+file: main.c
+meta:
+  language: C
+  version: 17 (GCC 10.2.0)

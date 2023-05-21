@@ -1,0 +1,5 @@
+id: zig
+file: main.zig
+meta:
+  language: Zig
+  version: 0.11.0

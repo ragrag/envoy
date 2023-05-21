@@ -1,0 +1,5 @@
+id: python2
+file: main.py
+meta:
+  language: Python
+  version: 2.7.18

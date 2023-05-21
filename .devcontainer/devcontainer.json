@@ -1,0 +1,20 @@
+{
+    "name": "Envoi Dev Container",
+    "forwardPorts": [
+        4000
+    ],
+    "build": {
+        "dockerfile": "../Dockerfile",
+        "args": {}
+    },
+    "runArgs": [
+        "--privileged"
+    ],
+    "extensions": [
+        "golang.go",
+        "GitHub.copilot"
+    ],
+    "settings": {
+        "files.eol": "\n",
+    }
+}

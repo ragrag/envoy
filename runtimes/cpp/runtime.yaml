@@ -1,0 +1,5 @@
+id: cpp
+file: main.cpp
+meta:
+  language: C++
+  version: 20 (GCC 10.2.1)
