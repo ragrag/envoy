@@ -1,6 +1,5 @@
 <div align="center">
 
----
 
 ![envoy-logo](https://github.com/ragrag/envoy/assets/35541698/ff7b2ed9-0a89-409a-ad57-f6df70b80420)
 
