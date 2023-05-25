@@ -15,9 +15,12 @@
 
 
 ## About
-**Envoy** *(aan.voy)* is a simple, performant and secure code execution engine designed from the ground up for running code as well as judging multiple test-case submissions.
-Envoy provides a straight-to-the-point api surface and configuration with sensible defaults with out-of-the-box support for a multitude of programming languages
+**Envoy** *(aan.voy)* is a simple, performant and secure code execution engine designed from the ground up for running code as well as judging multiple test case submissions.
+Envoy provides a straight-to-the-point API surface and configuration with sensible defaults and out-of-the-box support for a multitude of programming languages.
 
 ## Features
-- 
+- Secure sandboxed code execution
+- Stupid simple configuration for time and memory limits
+- Minimal straight to the point API Surface 
+- Batched test case support
 
