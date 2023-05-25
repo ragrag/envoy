@@ -1,7 +1,6 @@
 <div align="center">
 
-
-![envoy-logo](https://github.com/ragrag/envoy/assets/35541698/ff7b2ed9-0a89-409a-ad57-f6df70b80420)
+<img src="https://github.com/ragrag/envoy/assets/35541698/ff7b2ed9-0a89-409a-ad57-f6df70b80420" data-canonical-src="https://github.com/ragrag/envoy/assets/35541698/ff7b2ed9-0a89-409a-ad57-f6df70b80420" width="500" />
 
 ---
 
@@ -17,7 +16,7 @@
 
 ## About
 **Envoy** *(aan.voy)* is a simple, performant and secure code execution engine designed from the ground up for running code as well as judging multiple test-case submissions.
-Envoy provides a straight-to-the-point api surface and configuration with sensible defaults with out-of-the-box support for a multitude of programming languages/
+Envoy provides a straight-to-the-point api surface and configuration with sensible defaults with out-of-the-box support for a multitude of programming languages
 
 ## Features
 - 
