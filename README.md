@@ -31,7 +31,16 @@ Envoy provides a straight-to-the-point API surface, configuration with sensible 
 ## Getting Started
 
 ### Deploying
-The main recommanded way to deploy Envoy is via Docker. Envoy comes with a prebuilt [docker image on dockerhub](https://hub.docker.com/r/ragrag/envoy) that you can directly use. a customized Docker image can always be built from the provided Dockerfile in the repository.
+The recommanded way to deploy Envoy is via Docker. Envoy comes with a  [prebuilt docker image on dockerhub](https://hub.docker.com/r/ragrag/envoy) that you can directly use. a customized Docker image can always be built from the provided Dockerfile in the repository.
+
+:warning: For Envoy to function correctly, the Docker container must be run in [privileged mode](https://docs.docker.com/engine/reference/commandline/run/#privileged).
+ 
+Running Docker in privileged mode gives all capabilities to the container, effectively disabling the security boundaries between the Docker container and the host system. This is necessary for [isolate](https://github.com/ioi/isolate) to run properly, which is the underlying sandboxing technology Envoy uses (more on that below)
+
+How to enable privileged mode depends on the environment where you are running your Docker image:
+- For running a single Docker container using the Docker CLI, you can use the `--privileged` flag. 
+- When deploying in a Kubernetes environment, you can set `privileged: true` in the securityContext section of your pod specification.
+- For cloud hosted providers, the method to enable privileged mode may vary, and you should consult the specific provider's documentation.
 
 
 
