@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://github.com/ragrag/envoy/assets/35541698/ff7b2ed9-0a89-409a-ad57-f6df70b80420" data-canonical-src="https://github.com/ragrag/envoy/assets/35541698/ff7b2ed9-0a89-409a-ad57-f6df70b80420" width="500" />
+<img src="https://github.com/ragrag/envoy/assets/35541698/0f00ce5f-b255-4db1-bcf1-199a872f4db0" data-canonical-src="https://github.com/ragrag/envoy/assets/35541698/0f00ce5f-b255-4db1-bcf1-199a872f4db0" width="500" />
 
 ---
 
