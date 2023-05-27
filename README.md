@@ -43,5 +43,22 @@ How to enable privileged mode depends on the environment where you are running y
 - For cloud hosted providers, the method to enable privileged mode may vary, and you should consult the specific provider's documentation.
 
 
-
 ### Running Locally
+
+To start local development with Envoy, it is recommended to use the provided VSCode devcontainer. This provides a complete, pre-configured development environment with all the necessary dependencies for Envoy.
+
+Before you start, ensure the following prerequisites are met:
+
+1. **Install Docker Desktop:** VSCode devcontainers require Docker to operate. [Docker Desktop](https://www.docker.com/products/docker-desktop/) is the easiest way to get Docker on your machine and it must be installed and running before proceeding.
+
+2. **Prepare the .env file:** Copy the `.env.example` file to a new file named `.env` and change the configuration values if needed.
+
+With the prerequisites met, you can now run Envoy:
+
+1. Open the project in VSCode. 
+2. VSCode should automatically suggest opening the project in a devcontainer. If not, you can manually launch the devcontainer by clicking on the green '><' button in the bottom-left corner and selecting 'Remote-Containers: Open Folder in Container...' or doing the same via the command-pallete.
+3. Once the devcontainer is running, open a terminal in VSCode and run Envoy with the following command:
+
+    ```bash
+    go run cmd/main.go
+    ```
