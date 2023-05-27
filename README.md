@@ -39,7 +39,7 @@ Running Docker in privileged mode gives all capabilities to the container, effec
 
 How to enable privileged mode depends on the environment where you are running your Docker image:
 - For running a single Docker container using the Docker CLI, you can use the `--privileged` flag. 
-- When deploying in a Kubernetes environment, you can set `privileged: true` in the securityContext section of your pod specification.
+- When deploying in a Kubernetes environment, you can set `privileged: true` in the `securityContext` section of your pod specification.
 - For cloud hosted providers, the method to enable privileged mode may vary, and you should consult the specific provider's documentation.
 
 
