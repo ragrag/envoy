@@ -1,2 +1,3 @@
 /runtimes/**/runtime/
 .env
+main

@@ -44,7 +44,7 @@ func ProvideConfig() *Config {
 
 	logLevel := getString("LOG_LEVEL", defaults.logLevel)
 
-	port := getInt("SERVER_PORT")
+	port := getInt("SERVER_PORT", defaults.port)
 	serverAuthToken := viper.GetString("SERVER_AUTH_TOKEN")
 
 	workerCount := getInt("ENGINE_WORKER_COUNT", defaults.workerCount)

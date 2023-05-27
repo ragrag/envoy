@@ -4,7 +4,7 @@
         4000
     ],
     "build": {
-        "dockerfile": "../Dockerfile",
+        "dockerfile": "./Dockerfile.local",
         "args": {}
     },
     "runArgs": [
