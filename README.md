@@ -6,28 +6,29 @@
 
 </div>
 
-
 ## Table of Contents
-* [About](#about)
-* [Features](#features)
-* [Getting Started](#getting-started)
-* [API Reference](#api-reference)
-* [Configuration](#api-reference)
-* [Contributing](#contributing)
 
+- [About](#about)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [API Reference](#api-reference)
+- [Configuration](#api-reference)
 
 ## About
-**Envoy** *(aan.voy)* is a simple, performant and secure code execution engine designed from the ground up for running code as well as judging multiple test case submissions.
+
+**Envoy** _(aan.voy)_ is a simple, performant and secure code execution engine designed from the ground up for running code as well as judging multiple test case submissions.
 Envoy provides a straight-to-the-point API surface, configuration with sensible defaults and out-of-the-box support for a multitude of programming languages.
 
 ## Features
+
 - Secure sandboxed code execution
 - Stupid simple configuration for time and memory limits
-- Minimal straight to the point API Surface 
+- Minimal straight to the point API Surface
 - Batched test case support
 
 ### Supported Languages
-This is the current list of supported languages, contributions to add or request more language support is always welcome 
+
+This is the current list of supported languages, contributions to add or request more language support is always welcome
 
 `c`,
 `c++`,
@@ -51,17 +52,18 @@ This is the current list of supported languages, contributions to add or request
 ## Getting Started
 
 ### Deploying
-The recommanded way to deploy Envoy is via Docker. Envoy comes with a  [prebuilt docker image on dockerhub](https://hub.docker.com/r/ragrag/envoy) that you can directly use. a customized Docker image can always be built from the provided Dockerfile in the repository.
+
+The recommanded way to deploy Envoy is via Docker. Envoy comes with a [prebuilt docker image on dockerhub](https://hub.docker.com/r/ragrag/envoy) that you can directly use. a customized Docker image can always be built from the provided Dockerfile in the repository.
 
 :warning: For Envoy to function correctly, the Docker container must be run in [privileged mode](https://docs.docker.com/engine/reference/commandline/run/#privileged).
- 
+
 Running Docker in privileged mode gives all capabilities to the container, effectively disabling the security boundaries between the Docker container and the host system. This is necessary for [isolate](https://github.com/ioi/isolate) to run properly, which is the underlying sandboxing technology Envoy uses.
 
 How to enable privileged mode depends on the environment where you are running your Docker image:
-- For running a single Docker container using the Docker CLI, you can use the `--privileged` flag. 
+
+- For running a single Docker container using the Docker CLI, you can use the `--privileged` flag.
 - When deploying in a Kubernetes environment, you can set `privileged: true` in the `securityContext` section of your pod specification.
 - For cloud hosted providers, the method to enable privileged mode may vary, and you should consult the specific provider's documentation.
-
 
 ### Running Locally
 
@@ -75,13 +77,13 @@ Before you start, ensure the following prerequisites are met:
 
 With the prerequisites met, you can now run Envoy:
 
-1. Open the project in VSCode. 
+1. Open the project in VSCode.
 2. VSCode should automatically suggest opening the project in a devcontainer. If not, you can manually launch the devcontainer by clicking on the green '><' button in the bottom-left corner and selecting 'Remote-Containers: Open Folder in Container...' or doing the same via the command-pallete.
 3. Once the devcontainer is running, open a terminal in VSCode and run Envoy with the following command:
 
-    ```bash
-    go run cmd/main.go
-    ```
+   ```bash
+   go run cmd/main.go
+   ```
 
 ## API Reference
 
@@ -89,7 +91,7 @@ With the prerequisites met, you can now run Envoy:
 
 By default, all API requests are publicly accessible.
 
-Bearer Authentication can be added on all requests by providing an auth token in the server configuration by setting the `SERVER_AUTH_TOKEN` environment variable, as mentioned in the [Configuration](#configuration) section. 
+Bearer Authentication can be added on all requests by providing an auth token in the server configuration by setting the `SERVER_AUTH_TOKEN` environment variable, as mentioned in the [Configuration](#configuration) section.
 
 Once an auth token is set, it must be included as a Bearer token in the Authorization header of all requests.
 
@@ -106,7 +108,9 @@ curl -i -H 'Accept: application/json' -H 'Authorization: Bearer <your_token_here
 `GET /runtimes`
 
 #### Response
+
 An array of available programming languages that can be used
+
 - `id`: the id of the runtime, this is a unique identifier for a language and is used for other requests to reference that language
 - `language`: the programming language
 - `version`: the current version of the language
@@ -141,11 +145,12 @@ Status: 200 OK
 `POST /run`
 
 body:
+
 - `language`: The id of the programming language.
 - `code`: The code to be executed.
 - `options` (optional): Options that can be provided to the execution environment
-    - `timeLimit` (optional): Maximum time (in seconds) for the program execution, exceeding this limit will result in `TIME_LIMIT_EXCEEDED` status
-    - `memoryLimit` (optional): Maximum memory (in KB) that the program can use, exceeding this limit will result in `MEMORY_LIMIT_EXCEEDED` status
+  - `timeLimit` (optional): Maximum time (in seconds) for the program execution, exceeding this limit will result in `TIME_LIMIT_EXCEEDED` status
+  - `memoryLimit` (optional): Maximum memory (in KB) that the program can use, exceeding this limit will result in `MEMORY_LIMIT_EXCEEDED` status
 
 ```json
 {
@@ -159,11 +164,12 @@ body:
 ```
 
 #### Response
+
 - `output`: The output generated by the executed code.
 - `status`: The status of the code execution, and can be one of:
-  - `SUCCESS`: the code executed successfully without any errors 
+  - `SUCCESS`: the code executed successfully without any errors
   - `COMPILATION_ERROR`: a compilation error occured
-  - `TIME_LIMIT_EXCEEDED`:  the program running time exceeded that set by the preconfigured limit or the provided limit in the request
+  - `TIME_LIMIT_EXCEEDED`: the program running time exceeded that set by the preconfigured limit or the provided limit in the request
   - `MEMORY_LIMIT_EXCEEDED`: the program used memory exceeded that set by the preconfigured limit or the provided limit in the request
   - `RUNTIME_ERROR`: a runtime error occured
 - `time` (optional): The time (in seconds) the program took to execute, in case of `COMPILATION_ERROR` this is not provided
@@ -191,7 +197,6 @@ Status: 200 OK
 }
 ```
 
-
 ### Judge Code
 
 #### Request
@@ -199,37 +204,38 @@ Status: 200 OK
 `POST /judge`
 
 body:
+
 - `language`: The id of the programming language.
 - `code`: The code to be executed.
 - `testCases`: An array containing test cases
-    - `input`: input of the test case (stdin)
-    - `expectedOutput`: expected output of the test case
+  - `input`: input of the test case (stdin)
+  - `expectedOutput`: expected output of the test case
 - `options` (optional): Options that can be provided to the execution environment
-   - `timeLimit` (optional): Maximum time (in seconds) for the program execution, exceeding this limit will result in `TIME_LIMIT_EXCEEDED` status
-   - `memoryLimit` (optional): Maximum memory (in KB) that the program can use, exceeding this limit will result in `MEMORY_LIMIT_EXCEEDED` status
+  - `timeLimit` (optional): Maximum time (in seconds) for the program execution, exceeding this limit will result in `TIME_LIMIT_EXCEEDED` status
+  - `memoryLimit` (optional): Maximum memory (in KB) that the program can use, exceeding this limit will result in `MEMORY_LIMIT_EXCEEDED` status
 
 ```json
 {
-    "language": "cpp",
-    "code": "#include <iostream>; \n using namespace std; int main(){string i; cin>>i;cout<< i<<endl; return 0;}",
-    "testCases": [
-        {
-            "input": "1",
-            "expectedOutput": "1\n"
-        },
-        {
-            "input": "2",
-            "expectedOutput": "2\n"
-        },
-        {
-            "input": "3",
-            "expectedOutput": "3\n"
-        },
-        {
-            "input": "4",
-            "expectedOutput": "4\n"
-        }
-    ]
+  "language": "cpp",
+  "code": "#include <iostream>; \n using namespace std; int main(){string i; cin>>i;cout<< i<<endl; return 0;}",
+  "testCases": [
+    {
+      "input": "1",
+      "expectedOutput": "1\n"
+    },
+    {
+      "input": "2",
+      "expectedOutput": "2\n"
+    },
+    {
+      "input": "3",
+      "expectedOutput": "3\n"
+    },
+    {
+      "input": "4",
+      "expectedOutput": "4\n"
+    }
+  ]
 }
 ```
 
@@ -239,7 +245,7 @@ body:
   - `status`: can be one of:
     - `SUCCESS`: all test cases passed
     - `COMPILATION_ERROR`: a compilation error occured
-    - `TIME_LIMIT_EXCEEDED`:  the program running time exceeded that set by the preconfigured limit or the provided limit in the request
+    - `TIME_LIMIT_EXCEEDED`: the program running time exceeded that set by the preconfigured limit or the provided limit in the request
     - `MEMORY_LIMIT_EXCEEDED`: the program used memory exceeded that set by the preconfigured limit or the provided limit in the request
     - `RUNTIME_ERROR`: a runtime error occured
     - `WRONG_ANSWER`: a runtime error occured
@@ -251,7 +257,7 @@ body:
 - `results`: an array containing the result of each test case, empty on `COMPILATION_ERROR`
   - `status`: can be one of:
     - `SUCCESS`: all test cases passed
-    - `TIME_LIMIT_EXCEEDED`:  the program running time for the test case exceeded that set by the preconfigured limit or the provided limit in the request
+    - `TIME_LIMIT_EXCEEDED`: the program running time for the test case exceeded that set by the preconfigured limit or the provided limit in the request
     - `MEMORY_LIMIT_EXCEEDED`: the program used memory for the test case exceeded that set by the preconfigured limit or the provided limit in the request
     - `RUNTIME_ERROR`: a runtime error occured
     - `WRONG_ANSWER`: a runtime error occured
@@ -260,7 +266,6 @@ body:
   - `input`: The input (stdin) for the test case
   - `expectedOutput`: The expected output (stdout) for the test case
   - `output (optional)`: The actual output (stdout) by the program for the test case
-
 
 ```http
 HTTP/1.1 200 OK
@@ -347,13 +352,11 @@ Status: 200 OK
 
 All configurations are set with environment variables. Below is a table of all available configuration parameters:
 
-| Environment Variable | Description | Default Value |
-| :--- | :--- | :--- |
-| `LOG_LEVEL` | log level. Available options are trace, debug, info, warn, error, fatal, panic | `info` |
-| `SERVER_PORT` | port number that the server will use | `4000` |
-| `SERVER_AUTH_TOKEN` (optional) | If set, all requests must include this token in the Authorization header (Bearer token). | `None` |
-| `ENGINE_WORKER_COUNT` | This defines the maximum number of concurrent workers running code or judging submissions. The value must be between 1 and 999. | `10` |
-| `ENGINE_WORKER_COUNT` | This defines the maximum number of concurrent workers running code or juding submissions. The value must be between 1 and 999. | `100` |
-| `ENGINE_TIME_LIMIT_SECONDS` | The default time limit (in seconds) for a single program run or a single test case run | `2` |
-| `ENGINE_MEMORY_LIMIT_KB` | The default memory limit (in KB) for a single program run or a single test case run | `128000` |
-
+| Environment Variable           | Description                                                                                                                    | Default Value |
+| :----------------------------- | :----------------------------------------------------------------------------------------------------------------------------- | :------------ |
+| `LOG_LEVEL`                    | log level. Available options are trace, debug, info, warn, error, fatal, panic                                                 | `info`        |
+| `SERVER_PORT`                  | port number that the server will use                                                                                           | `4000`        |
+| `SERVER_AUTH_TOKEN` (optional) | If set, all requests must include this token in the Authorization header (Bearer token).                                       | `None`        |
+| `ENGINE_WORKER_COUNT`          | This defines the maximum number of concurrent workers running code or juding submissions. The value must be between 1 and 999. | `100`         |
+| `ENGINE_TIME_LIMIT_SECONDS`    | The default time limit (in seconds) for a single program run or a single test case run                                         | `2`           |
+| `ENGINE_MEMORY_LIMIT_KB`       | The default memory limit (in KB) for a single program run or a single test case run                                            | `128000`      |
