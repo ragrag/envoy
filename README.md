@@ -55,7 +55,7 @@ The recommanded way to deploy Envoy is via Docker. Envoy comes with a  [prebuilt
 
 :warning: For Envoy to function correctly, the Docker container must be run in [privileged mode](https://docs.docker.com/engine/reference/commandline/run/#privileged).
  
-Running Docker in privileged mode gives all capabilities to the container, effectively disabling the security boundaries between the Docker container and the host system. This is necessary for [isolate](https://github.com/ioi/isolate) to run properly, which is the underlying sandboxing technology Envoy uses (more on that below)
+Running Docker in privileged mode gives all capabilities to the container, effectively disabling the security boundaries between the Docker container and the host system. This is necessary for [isolate](https://github.com/ioi/isolate) to run properly, which is the underlying sandboxing technology Envoy uses.
 
 How to enable privileged mode depends on the environment where you are running your Docker image:
 - For running a single Docker container using the Docker CLI, you can use the `--privileged` flag. 
