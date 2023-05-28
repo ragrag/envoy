@@ -33,7 +33,7 @@ var defaults = struct {
 }{
 	logLevel:         "info",
 	port:             4000,
-	workerCount:      10,
+	workerCount:      100,
 	timeLimitSeconds: 2,
 	memoryLimitKB:    128_000,
 	useControlGroups: true,

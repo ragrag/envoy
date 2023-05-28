@@ -44,7 +44,7 @@ func (command *CommandBuilder) Box(id int) *CommandBuilder {
 }
 
 func (command *CommandBuilder) Processes() *CommandBuilder {
-	command.command = append(command.command, "-p")
+	command.command = append(command.command, "-p256")
 	return command
 }
 

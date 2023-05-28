@@ -353,6 +353,7 @@ All configurations are set with environment variables. Below is a table of all a
 | `SERVER_PORT` | port number that the server will use | `4000` |
 | `SERVER_AUTH_TOKEN` (optional) | If set, all requests must include this token in the Authorization header (Bearer token). | `None` |
 | `ENGINE_WORKER_COUNT` | This defines the maximum number of concurrent workers running code or judging submissions. The value must be between 1 and 999. | `10` |
+| `ENGINE_WORKER_COUNT` | This defines the maximum number of concurrent workers running code or juding submissions. The value must be between 1 and 999. | `100` |
 | `ENGINE_TIME_LIMIT_SECONDS` | The default time limit (in seconds) for a single program run or a single test case run | `2` |
 | `ENGINE_MEMORY_LIMIT_KB` | The default memory limit (in KB) for a single program run or a single test case run | `128000` |
 
