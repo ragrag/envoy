@@ -424,44 +424,47 @@ func (engine *Engine) judge(runtime *runtimeenv.Runtime, isolate *isolateWorker,
 
 				results = append(results, testCaseResult)
 			}
-		}
 
-		meta, err := parseMeta(isolate, engine.config.UseControlGroups)
-		if err != nil {
-			return nil, err
-		}
-
-		totalTime += meta.time
-		totalMemory += meta.memory
-
-		if stdout != testCases[i].ExpectedOutput {
-			testCaseResult = &TestCaseResult{
-				Output:         stdout,
-				ExpectedOutput: testCases[i].ExpectedOutput,
-				Input:          testCases[i].Input,
-				Status:         WRONG_ANSWER,
-				Time:           meta.time,
-				Memory:         meta.memory,
+			totalTime += meta.time
+			totalMemory += meta.memory
+		} else {
+			meta, err := parseMeta(isolate, engine.config.UseControlGroups)
+			if err != nil {
+				return nil, err
 			}
 
-			results = append(results, testCaseResult)
-		} else {
-			results = append(results, &TestCaseResult{
-				Output:         stdout,
-				ExpectedOutput: testCases[i].ExpectedOutput,
-				Input:          testCases[i].Input,
-				Status:         SUCCESS,
-				Time:           meta.time,
-				Memory:         meta.memory,
-			})
-		}
+			totalTime += meta.time
+			totalMemory += meta.memory
 
-		if testCaseResult != nil && verdict == nil {
-			verdict = &JudgeVerdict{
-				Output:         testCaseResult.Output,
-				ExpectedOutput: testCaseResult.ExpectedOutput,
-				Input:          testCaseResult.Input,
-				Status:         testCaseResult.Status,
+			if stdout != testCases[i].ExpectedOutput {
+				testCaseResult = &TestCaseResult{
+					Output:         stdout,
+					ExpectedOutput: testCases[i].ExpectedOutput,
+					Input:          testCases[i].Input,
+					Status:         WRONG_ANSWER,
+					Time:           meta.time,
+					Memory:         meta.memory,
+				}
+
+				results = append(results, testCaseResult)
+			} else {
+				results = append(results, &TestCaseResult{
+					Output:         stdout,
+					ExpectedOutput: testCases[i].ExpectedOutput,
+					Input:          testCases[i].Input,
+					Status:         SUCCESS,
+					Time:           meta.time,
+					Memory:         meta.memory,
+				})
+			}
+
+			if testCaseResult != nil && verdict == nil {
+				verdict = &JudgeVerdict{
+					Output:         testCaseResult.Output,
+					ExpectedOutput: testCaseResult.ExpectedOutput,
+					Input:          testCaseResult.Input,
+					Status:         testCaseResult.Status,
+				}
 			}
 		}
 	}
