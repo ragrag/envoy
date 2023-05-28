@@ -26,6 +26,28 @@ Envoy provides a straight-to-the-point API surface, configuration with sensible 
 - Minimal straight to the point API Surface 
 - Batched test case support
 
+### Supported Languages
+This is the current list of supported languages, contributions to add or request more language support is always welcome 
+
+`c`,
+`c++`,
+`csharp`,
+`elixir`,
+`erlang`,
+`go`,
+`haskell`,
+`java`,
+`javascript`,
+`kotlin`,
+`php`,
+`python2`,
+`python3`,
+`rust`,
+`scala`,
+`swift`,
+`typescript`,
+`zig`
+
 ## Getting Started
 
 ### Deploying
@@ -60,3 +82,54 @@ With the prerequisites met, you can now run Envoy:
     ```bash
     go run cmd/main.go
     ```
+
+## API Reference
+
+### Authorization
+
+By default, all API requests are publicly accessible.
+
+Bearer Authentication can be added on all requests by providing an auth token in the server configuration by setting the `SERVER_AUTH_TOKEN` environment variable, as mentioned in the [Configuration](#configuration) section. 
+
+Once an auth token is set, it must be included as a Bearer token in the Authorization header of all requests.
+
+Example of a request with the Authorization header:
+
+```shell
+curl -i -H 'Accept: application/json' -H 'Authorization: Bearer <your_token_here>' http://localhost:8080/runtimes
+```
+
+### Get List of Available Runtimes
+
+#### Request
+
+`GET /runtimes`
+
+#### Response
+An array of available programming languages that can be used
+- `id`: the id of the runtime, this is a unique identifier for a language and is used for other requests to reference that language
+- `language`: the programming language
+- `version`: the current version of the language
+
+```http
+HTTP/1.1 200 OK
+Status: 200 OK
+
+[
+    {
+        "id": "go",
+        "language": "Go",
+        "version": "1.20.3"
+    },
+    {
+        "id": "javascript",
+        "language": "JavaScript",
+        "version": "18.16.0 (Node.js)"
+    },
+    {
+        "id": "rust",
+        "language": "Rust",
+        "version": "1.69.0"
+    }
+]
+```
