@@ -80,7 +80,7 @@ With the prerequisites met, you can now run Envoy:
 
 1. Open the project in VSCode.
 2. VSCode should automatically suggest opening the project in a devcontainer. If not, you can manually launch the devcontainer by clicking on the green '><' button in the bottom-left corner and selecting 'Remote-Containers: Open Folder in Container...' or doing the same via the command-pallete.
-3. Once the devcontainer is running, open a terminal in VSCode and run Envoy with the following command:
+3. Once the devcontainer is running, start Envoy with:
 
    ```bash
    go run cmd/main.go
