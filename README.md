@@ -1,8 +1,9 @@
 <div align="center">
  
-<img src="https://github.com/ragrag/envoy/assets/35541698/84ca78d8-ed2b-404f-b50d-63bcd4da6493" width="500" />
+
+<img src="https://github.com/ragrag/envoy/assets/35541698/c9ea6ed6-0a85-4347-89a2-7dbb5e71c151" width="500" />
  
-![envoi-steins-gate-machine](https://github.com/ragrag/envoy/assets/35541698/65307737-18d5-4e25-8830-a8acefde02ca)
+![envoi-steins-gate-machine](https://github.com/ragrag/envoy/assets/35541698/ccb16f5a-57bd-4703-ba0a-3d0c46cd236c)
 
 </div>
 
