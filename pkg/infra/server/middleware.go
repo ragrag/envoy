@@ -4,7 +4,7 @@ import (
 	"strings"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/ragrag/envoi/pkg/infra"
+	"github.com/ragrag/envoy/pkg/infra"
 )
 
 func AuthMiddleware(authToken string) func(c *fiber.Ctx) error {

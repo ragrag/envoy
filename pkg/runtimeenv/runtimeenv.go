@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/ragrag/envoi/pkg/util"
+	"github.com/ragrag/envoy/pkg/util"
 	"github.com/sirupsen/logrus"
 	"golang.org/x/exp/maps"
 	"gopkg.in/yaml.v3"

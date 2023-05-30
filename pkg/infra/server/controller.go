@@ -2,9 +2,9 @@ package server
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/ragrag/envoi/pkg/engine"
-	"github.com/ragrag/envoi/pkg/infra"
-	"github.com/ragrag/envoi/pkg/usecase"
+	"github.com/ragrag/envoy/pkg/engine"
+	"github.com/ragrag/envoy/pkg/infra"
+	"github.com/ragrag/envoy/pkg/usecase"
 )
 
 type Controller struct {

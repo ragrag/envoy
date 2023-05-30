@@ -1,7 +1,7 @@
 package usecase
 
 import (
-	"github.com/ragrag/envoi/pkg/runtimeenv"
+	"github.com/ragrag/envoy/pkg/runtimeenv"
 )
 
 type GetRuntimes struct {

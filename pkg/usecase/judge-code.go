@@ -1,7 +1,7 @@
 package usecase
 
 import (
-	"github.com/ragrag/envoi/pkg/engine"
+	"github.com/ragrag/envoy/pkg/engine"
 )
 
 type JudgeCode struct {

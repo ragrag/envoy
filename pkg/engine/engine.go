@@ -12,10 +12,10 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/ragrag/envoi/pkg/infra"
-	"github.com/ragrag/envoi/pkg/runtimeenv"
-	"github.com/ragrag/envoi/pkg/sandbox"
-	"github.com/ragrag/envoi/pkg/util"
+	"github.com/ragrag/envoy/pkg/infra"
+	"github.com/ragrag/envoy/pkg/runtimeenv"
+	"github.com/ragrag/envoy/pkg/sandbox"
+	"github.com/ragrag/envoy/pkg/util"
 
 	"github.com/sirupsen/logrus"
 )

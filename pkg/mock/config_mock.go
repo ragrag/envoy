@@ -1,6 +1,6 @@
 package mock
 
-import "github.com/ragrag/envoi/pkg/infra"
+import "github.com/ragrag/envoy/pkg/infra"
 
 var ConfigMock = &infra.Config{
 	LogLevel: "panic",

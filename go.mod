@@ -1,4 +1,4 @@
-module github.com/ragrag/envoi
+module github.com/ragrag/envoy
 
 go 1.18
 

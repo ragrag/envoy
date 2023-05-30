@@ -3,10 +3,10 @@ package engine
 import (
 	"testing"
 
-	"github.com/ragrag/envoi/pkg/infra"
-	"github.com/ragrag/envoi/pkg/mock"
-	"github.com/ragrag/envoi/pkg/runtimeenv"
-	"github.com/ragrag/envoi/pkg/sandbox"
+	"github.com/ragrag/envoy/pkg/infra"
+	"github.com/ragrag/envoy/pkg/mock"
+	"github.com/ragrag/envoy/pkg/runtimeenv"
+	"github.com/ragrag/envoy/pkg/sandbox"
 	"github.com/sirupsen/logrus"
 	"go.uber.org/dig"
 )

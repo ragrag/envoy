@@ -3,7 +3,7 @@ package server
 import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
-	"github.com/ragrag/envoi/pkg/infra"
+	"github.com/ragrag/envoy/pkg/infra"
 	"github.com/sirupsen/logrus"
 )
 

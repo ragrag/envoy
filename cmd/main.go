@@ -6,12 +6,12 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	_ "github.com/joho/godotenv/autoload"
-	"github.com/ragrag/envoi/pkg/engine"
-	"github.com/ragrag/envoi/pkg/infra"
-	"github.com/ragrag/envoi/pkg/infra/server"
-	"github.com/ragrag/envoi/pkg/runtimeenv"
-	"github.com/ragrag/envoi/pkg/sandbox"
-	"github.com/ragrag/envoi/pkg/usecase"
+	"github.com/ragrag/envoy/pkg/engine"
+	"github.com/ragrag/envoy/pkg/infra"
+	"github.com/ragrag/envoy/pkg/infra/server"
+	"github.com/ragrag/envoy/pkg/runtimeenv"
+	"github.com/ragrag/envoy/pkg/sandbox"
+	"github.com/ragrag/envoy/pkg/usecase"
 	"github.com/sirupsen/logrus"
 	"go.uber.org/dig"
 )

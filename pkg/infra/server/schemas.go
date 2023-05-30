@@ -1,6 +1,6 @@
 package server
 
-import "github.com/ragrag/envoi/pkg/usecase"
+import "github.com/ragrag/envoy/pkg/usecase"
 
 type RunOptionsSchema struct {
 	TimeLimit   *float64 `json:"timeLimit,omitempty"`
