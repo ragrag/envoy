@@ -66,7 +66,7 @@ How to enable privileged mode depends on the environment where you are running y
 - When deploying in a Kubernetes environment, you can set `privileged: true` in the `securityContext` section of your pod specification.
 - For cloud hosted providers, the method to enable privileged mode may vary, and you should consult the specific provider's documentation.
 
-### Running Locally
+### Developing Locally / Contributing
 
 To start local development with Envoy, it is recommended to use the provided VSCode devcontainer. This provides a complete, pre-configured development environment with all the necessary dependencies for Envoy.
 
